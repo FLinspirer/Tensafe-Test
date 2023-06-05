@@ -1,38 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:gravity="center"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/network"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="开网"
-            android:onClick="OnClick"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/xposed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="edxposed"
-            android:onClick="OnClick"/>
+            android:onClick="OnClick"
+            android:text="EDXPOSED" />
 
         <Button
             android:id="@+id/xposeddebug"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="debug"
-            android:onClick="OnClick"/>
+            android:onClick="OnClick"
+            android:text="DEBUG" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="BOOT COMMAND" />
+
+        <EditText
+            android:id="@+id/bootcmd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="CMD"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/savecmd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="OnClick"
+            android:text="SAVE" />
+    </LinearLayout>
 
 
 </LinearLayout>

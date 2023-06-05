@@ -6,6 +6,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
@@ -14,15 +16,14 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_main);
+        String cmd = DataUtil.ReadStringValue(this,"cmd","");
+        TextView tvs = (TextView) findViewById (id.bootcmd);
+        tvs.setText(cmd);
     }
 
     public void OnClick(final View view) {
         try {
             switch (view.getId()) {
-                case id.network: {
-                    RunCommand("sh /system/tshook/network.sh");
-                    break;
-                }
                 case id.xposed: {
                     RunCommand("am start -n de.robv.android.xposed.installer/de.robv.android.xposed.installer.WelcomeActivity");
                     break;
@@ -30,6 +31,10 @@ public class MainActivity extends Activity {
                 case id.xposeddebug: {
                     RunCommand("am start -n de.robv.android.xposed.installer/de.robv.android.xposed.installer.DebugActivity");
                     break;
+                }
+                case id.savecmd:{
+                    String cmd = ((EditText) findViewById(id.bootcmd)).getText().toString();
+                    DataUtil.SaveStringValue(this, "cmd", cmd);
                 }
                 default:
                     break;
