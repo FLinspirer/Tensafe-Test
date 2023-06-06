@@ -46,7 +46,8 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="CMD"
-            android:inputType="text" />
+            android:inputType="text"
+            android:singleLine="false" />
 
         <Button
             android:id="@+id/savecmd"
